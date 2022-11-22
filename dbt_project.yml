@@ -1,0 +1,51 @@
+name: 'steam_dbt_bos'
+
+config-version: 2
+version: '1.0.0'
+
+profile: steam_dbt_bos
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["test"]
+macro-paths: ["macro"]
+snapshot-paths: ["snapshot"]
+docs-paths: ["docs"]
+asset-paths: ["asset"]
+
+target-path: "target"
+
+
+clean-targets: ["target"]
+
+quoting:
+  database: false
+  schema: false
+  identifier: false
+
+models:
+  +transient: false
+  +copy_grants: true
+  +on_schema_change: "append_new_columns"
+  steam_dbt_bos:
+    raw:
+      +schema: RAW
+      +tags:
+        - raw
+      +materialized: view
+      database: |
+        {%- if target.name == "dev" -%} DEV
+        {%- elif target.name == "prod" -%} PROD
+        {%- else -%} invalid_database
+        {%- endif -%}
+    mart:
+      +schema: MART
+      +tags:
+        - mart
+      +materialized: view
+      database: |
+        {%- if target.name == "dev" -%} DEV
+        {%- elif target.name == "prod" -%} PROD
+        {%- else -%} invalid_database
+        {%- endif -%}
+
+
