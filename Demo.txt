@@ -1,6 +1,0 @@
-Demo
-1. Ladda in seeds
-2. Fixa en source till det.
-3. Skapa två modeller
-4. Ändra en av modellerna till en tabll.
-5. Visa docs serve
