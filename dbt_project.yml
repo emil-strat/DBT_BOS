@@ -11,6 +11,7 @@ macro-paths: ["macro"]
 snapshot-paths: ["snapshot"]
 docs-paths: ["docs"]
 asset-paths: ["asset"]
+seed-paths: ["seed"]
 
 target-path: "target"
 
@@ -21,6 +22,15 @@ quoting:
   database: false
   schema: false
   identifier: false
+
+seeds:
+  steam_dbt_bos:
+    employees:
+      +column_types:
+        name: string
+        title: string
+        phone_number: string
+        email: string
 
 models:
   +transient: false
