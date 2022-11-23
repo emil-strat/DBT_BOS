@@ -1,0 +1,10 @@
+version: 2
+
+seeds:
+  - name: employees
+    config:
+      column_types:
+        NAME: string
+        TITLE: string
+        PHONE_NUMBER: string
+        EMAIL: string
