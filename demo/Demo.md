@@ -1,7 +1,7 @@
 Demo
-1. Ladda in seeds `dbt seed -t dev`
+1. Ladda in seeds `dbt seed -t prod`
 2. Fixa en source till det.
-3. Skapa två modeller
+3. Skapa en modell
 4. Ändra en av modellerna till en tabell. `materialized='table'`
 5. Visa docs serve
 
