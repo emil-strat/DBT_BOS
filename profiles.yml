@@ -10,7 +10,7 @@ steam_dbt_bos:
 
       role: ACCOUNTADMIN
       database: DEV
-      warehouse: BOS_WH
+      warehouse: COMPUTE_WH
       schema: RAW
       threads: 1
       client_session_keep_alive: False
@@ -24,7 +24,7 @@ steam_dbt_bos:
 
       role: ACCOUNTADMIN
       database: PROD
-      warehouse: BOS_WH
+      warehouse: COMPUTE_WH
       schema: RAW
       threads: 1
       client_session_keep_alive: False
